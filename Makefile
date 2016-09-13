@@ -26,4 +26,7 @@ test:
 clean:
 	rm -fv $(targets)
 
-.PHONY: build test clean
+docker-test:
+	gitlab-runner exec docker test
+
+.PHONY: build test clean docker-test
