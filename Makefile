@@ -1,6 +1,8 @@
 
-build: Add.class
-build: add
+targets  = Add.class
+targets += add
+
+build: $(targets)
 	@true
 
 %.class: %.java
@@ -21,4 +23,7 @@ test:
 	./add 1 2 3 | grep -q -w 6
 	./add 1 2 3 -1 -2 -3 | grep -q -w 0
 
-.PHONY: build test
+clean:
+	rm -fv $(targets)
+
+.PHONY: build test clean
