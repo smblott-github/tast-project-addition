@@ -27,6 +27,14 @@ $ python add.py 1 2 3
 6
 ```
 
+C:
+```shell
+$ ./add 1 2 3
+```
+```
+6
+```
+
 ### Tests
 
 Use:
