@@ -109,4 +109,7 @@ git fetch upstream
 
 # Merging upstream changes:
 git merge upstream/master
+
+# Rebasing:
+git rebase upstream/master
 ```
