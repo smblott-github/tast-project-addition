@@ -1,4 +1,4 @@
-# This is the Cakefile for this project.
+# This is the Cakefile for this test project.
 
 targets  = Add.class
 targets += add
