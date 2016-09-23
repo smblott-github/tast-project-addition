@@ -64,6 +64,12 @@ make test
 git config user.name "YOUR NAME"
 git config user.email YOUR_SCHOOL_OF_COMPUTING_EMAIL_ADDRESS
 
+# Only enter your password every fifteen minutes.
+git config credential.helper cache
+
+# Remember your password forever (not very secure).
+git config credential.helper store
+
 # Create a new branch (here named "work"):
 git checkout -b NEW_BRANCH_NAME
 
