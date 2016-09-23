@@ -47,6 +47,10 @@ Use:
 $ make test
 ```
 
+## Cheat Sheet
+
+There's a cheat sheet [here](https://gitlab.computing.dcu.ie/sblott/local-gitlab-documentation/blob/master/cheat-sheet.md).
+
 ## Git Notes
 
 For reference, here are some the git commands we've been using.
