@@ -26,7 +26,7 @@ $ java Add 1 2 3
 
 Python:
 ```shell
-$ python add.py 1 2 3
+$ python add-python2.py 1 2 3
 ```
 ```
 6
