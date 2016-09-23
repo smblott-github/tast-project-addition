@@ -69,6 +69,9 @@ git config user.email YOUR_SCHOOL_OF_COMPUTING_EMAIL_ADDRESS
 # Only enter your password every fifteen minutes.
 git config credential.helper cache
 
+# Set your preferred editor
+git config --global core.editor "gedit -w -s"
+
 # Remember your password forever (not very secure).
 git config credential.helper store
 
