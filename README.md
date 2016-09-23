@@ -70,7 +70,7 @@ git config user.email YOUR_SCHOOL_OF_COMPUTING_EMAIL_ADDRESS
 git config credential.helper cache
 
 # Set your preferred editor
-git config --global core.editor "gedit -w -s"
+git config --global core.editor "gedit -s"
 
 # Remember your password forever (not very secure).
 git config credential.helper store
@@ -97,7 +97,7 @@ git add SOME_FILE_NAME
 git commit -a -m "SOME COMMIT MESSAGE."
 
 # Pushing changes:
-git push origin BRANCH_NAME
+git push
 
 # Pulling changes:
 git pull
