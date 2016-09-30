@@ -19,16 +19,16 @@ test:
 	$(MAKE) build
 	# NOTE(smblott)  This is not a recommended test framework.  It's just a
 	# quick-and-dirty hack.
-	@# Java
+	# Java
 	java Add 1 2 3 | grep -q -w 6
 	java Add 1 2 3 | wc -l | grep -q -w 1
-	@# Python 2
+	# Python 2
 	python add-python2.py 1 2 3 | grep -q -w 6
 	python add-python2.py 1 2 3 | wc -l | grep -q -w 1
-	@# Python 3
+	# Python 3
 	python3 add-python3.py 1 2 3 | grep -q -w 6
 	python add-python2.py 1 2 3 | wc -l | grep -q -w 1
-	@# C
+	# C
 	./add 1 2 3 | grep -q -w 6
 	python add-python2.py 1 2 3 | wc -l | grep -q -w 1
 
