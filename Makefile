@@ -12,6 +12,10 @@ build: $(targets)
 	gcc -o $@ $<
 
 test:
+	# Output the test context (for reference only).
+	pwd
+	ls -l
+	# Build C and Java targets.
 	$(MAKE) build
 	# NOTE(smblott)  This is not a recommended test framework.  It's just a
 	# quick-and-dirty hack.
