@@ -15,7 +15,6 @@ test:
 	# Output the test context (for reference only).
 	pwd
 	ls -l
-	which perl
 	# Build C and Java targets.
 	$(MAKE) build
 	# NOTE(smblott)  This is not a recommended test framework.  It's just a
