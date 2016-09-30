@@ -116,3 +116,7 @@ Discuss the Docker test environment:
 - Builds.
 - Docker environment.
 - [MySql project](https://gitlab.computing.dcu.ie/sblott/test-project-mysql) and it's [configuration file](https://gitlab.computing.dcu.ie/sblott/test-project-mysql/blob/master/.gitlab-ci.yml).
+
+### Student projects
+
+Discuss naming of CASE3, CASE4 and CA377 project repos.
