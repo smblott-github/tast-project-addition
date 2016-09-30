@@ -104,6 +104,13 @@ git merge feature
 git push
 ```
 
+### The stash
+
+```shell
+git stash
+git stash pop
+```
+
 ### Markdown
 
 Discuss use of markdown with Github/Gitlab.
