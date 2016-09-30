@@ -78,9 +78,35 @@ get a merge conflict).
 
 ```shell
 git checkout -b feature
+git push -u origin feature
+
 git checkout master
 git checkout feature
+
+git checkout origin/pre-2017-case3
+# Observer, there's no .gitignore any more.
+
+git checkout master.
+# And .gitignore is back.
 ```
+
+Important...  Normally it is better *not* to make changes on the `master` branch.
+
+```shell
+git checkout feature
+# Edit/add add files.
+
+git commit -a
+git push
+
+git checkout master
+git merge feature
+git push
+```
+
+### Markdown
+
+Discuss use of markdown with Github/Gitlab.
 
 ### CI
 
