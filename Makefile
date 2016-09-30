@@ -13,6 +13,8 @@ build: $(targets)
 
 test:
 	$(MAKE) build
+	# NOTE(smblott)  This is not a recommended test framework.  It's just a
+	# quick-and-dirty hack.
 	@# Java
 	java Add 1 2 3 | grep -q -w 6
 	java Add 1 2 3 | wc -l | grep -q -w 1
