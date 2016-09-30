@@ -27,8 +27,6 @@ test:
 	python3 add-python3.py 1 2 3 | grep -q -w 6
 	# C
 	./add 1 2 3 | grep -q -w 6
-	# Perl
-	perl add.pl 1 2 3 | grep -q -w 6
 
 clean:
 	rm -fv $(targets)
