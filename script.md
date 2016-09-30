@@ -74,6 +74,14 @@ git push
 Students extend tests in Makefile, `sblott` adds Perl test (and, hopefully we
 get a merge conflict).
 
+### Branches
+
+```shell
+git checkout -b feature
+git checkout master
+git checkout feature
+```
+
 ### CI
 
 Discuss the Docker test environment:
