@@ -17,7 +17,7 @@ test:
 	ls -l
 	# Build C and Java targets.
 	$(MAKE) build
-	# NOTE(smblott)  This is not a recommended test framework.  It's just a
+	# NOTE(sblott)  This is not a recommended test framework.  It's just a
 	# quick-and-dirty hack.
 	# Java
 	java Add 1 2 3 | grep -q -w 6
