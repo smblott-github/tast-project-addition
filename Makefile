@@ -1,3 +1,6 @@
+# The is the project Cakefile.
+#                    |
+# There is an typo   |-------- here -- fix it.
 
 targets  = Add.class
 targets += add
