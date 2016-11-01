@@ -1,0 +1,708 @@
+= Git
+Stephen Blott <stephen.blott@dcu.ie>
+:data-uri:
+:stylesheet: /home/blott/.asciidoc/themes/smblott/smblott-extra.css
+
+// //////////////////////////////////////////////////////////////
+== Software Projects
+
+****
+Most software projects consist of a (possibly large) collection of files, usually text files.
+****
+
+****
+For example, the source code for the Python interpreter consists of a collection of almost _four thousand_  files.
+
+(Correct: October 2016.)
+****
+
+// //////////////////////////////////////////////////////////////
+== Software Projects
+
+****
+Most software is written by _many_ contributors.
+****
+
+****
+For example, Python interpreter has hundreds of contributors.
+****
+
+// //////////////////////////////////////////////////////////////
+== Software Projects
+
+****
+At any point in time, developers will be working on many different features.
+****
+
+****
+For example:
+
+- some new user-interface bling
+- or a networking issue
+- or a bug in a database
+- and so on.
+****
+
+// //////////////////////////////////////////////////////////////
+== Some Potential Problems
+
+.Copying change sets
+****
+When one contributor makes a set of changes,
+we need a mechanism for copying those changes to other developers.
+****
+
+// //////////////////////////////////////////////////////////////
+== Some Potential Problems
+
+.Merging change sets
+****
+When two developers make _different_ changes to the _same file_,
+we need a mechanism for _merging those changes_, automatically.
+****
+
+// //////////////////////////////////////////////////////////////
+== Some Potential Problems
+
+.Atomic change sets
+****
+If a change set involves _several changes to different files_, then we should always see the state either _before_ all of the changes, or _after_ all of the changes.
+****
+
+****
+We should never see a set of files with the changes having been made in some files but not in others.
+
+That just won't work!
+****
+
+// //////////////////////////////////////////////////////////////
+== Some Potential Problems
+
+.Multiple versions
+****
+Developers work on different features at the same time; for example, some
+new user-interface bling, optimisation of some network protocol and fixing
+a database bug.
+****
+
+****
+It should be possible to work on _different versions_ of the code base, when working on each such feature.
+
+The changes in a version of the code base are merged (atomically) only when they are ready.
+****
+
+// //////////////////////////////////////////////////////////////
+== Git
+
+****
+Git is a _source code control system_ and a _version control system_.
+****
+
+****
+Git is a set of tools for managing a (possibly large) set files.
+
+It provides features for solving all of the previous problems (and more).
+****
+
+// //////////////////////////////////////////////////////////////
+== Git
+
+****
+Git can be used to manage:
+
+- private/proprietary/commercial software projects
+- open-source software projects
+- or just your own files +
+  (for example, the scripts your write in this module)
+****
+
+// //////////////////////////////////////////////////////////////
+== Git
+
+****
+Git can be used to manage:
+
+- private/proprietary/commercial software projects
+- open-source software projects
+- or just your own files +
+  (for example, the scripts your write in this module)
+****
+
+****
+All of the lecture material for this module live in git.
+
+That includes the Einstein markers, the slides, the lab sheets, the web
+site (and more).
+****
+
+// //////////////////////////////////////////////////////////////
+== Git-Based Web sites
+
+****
+For open source projects, there are web sites like https://github.com/[Github]
+and https://bitbucket.org/[Bitbucket] which provide free hosting of Git repositories (and more).
+****
+
+****
+Here at DCU, we host a https://gitlab.computing.dcu.ie/[Gitlab] instance.
+
+All students at the School of Computing already have an account on Gitlab.
+
+(Just use the credentials which you use in the labs.)
+****
+
+// //////////////////////////////////////////////////////////////
+== Repositories
+
+****
+In git terminology, the collection of files (and all versions of that collection of files) is known as a _repository_.
+
+(Or "_repo_", for short.)
+****
+
+// //////////////////////////////////////////////////////////////
+== Demo
+
+****
+This is not a tutorial on git (that would take too long).
+
+This is a demo of the most important basic features of git.
+****
+
+// //////////////////////////////////////////////////////////////
+== Demo
+
+****
+1. Look at Gitlab.
+1. Clone the `ca116-demo` repo.
+****
+
+// //////////////////////////////////////////////////////////////
+== Demo
+
+****
+1. Look at Gitlab.
+1. Clone the `ca116-demo` repo.
+****
+
+[source, sh]
+----
+git clone 'git@gitlab.computing.dcu.ie:sblott/ca116-demo.git'
+----
+
+// //////////////////////////////////////////////////////////////
+== Demo
+
+****
+1. Look at Gitlab.
+1. Clone the `ca116-demo` repo.
+****
+
+****
+We now have a local copy of all of the repo's files.
+****
+
+// //////////////////////////////////////////////////////////////
+== Demo
+
+****
+1. Move existing Python files into the repo.
+1. Add them.
+1. Commit.
+****
+
+.Note to self
+****
+The files we need are in +~/python+ (on +chromebook+).
+****
+
+// //////////////////////////////////////////////////////////////
+== Demo
+
+****
+1. Move existing Python files into the repo.
+1. Add them.
+1. Commit.
+****
+
+[source, sh]
+----
+cp ~/python/*.py .
+
+git add *.py
+
+git commit -a -m "Add existing Python scripts."
+----
+
+// //////////////////////////////////////////////////////////////
+== Demo
+
+****
+1. Push changes.
+****
+
+****
+This step copies the new files (technically, the _change set_) to Gitlab.
+****
+
+// //////////////////////////////////////////////////////////////
+== Demo
+
+****
+1. Push changes.
+****
+
+[source, sh]
+.Usually:
+----
+git push
+----
+
+[source, sh]
+.The first time (sometimes):
+----
+git push -u origin master
+----
+
+// //////////////////////////////////////////////////////////////
+== Demo
+
+****
+1. Clone repo on +smblott+ (in office).
+1. Clone repo on +fouly+ (at home).
+****
+
+.Observe
+****
+The new files have been copied to those locations too.
+****
+
+****
+The clone command is the same as before.
+****
+
+// //////////////////////////////////////////////////////////////
+== Demo
+
+****
+1. Fix errors:
+** in +./histogram.py+, remove +int()+
+** in +./even-then-odd.py+, remove bogus +print+
+2. Commit.
+****
+
+// //////////////////////////////////////////////////////////////
+== Demo
+
+****
+1. Fix errors:
+** in +./histogram.py+, remove +int()+
+** in +./even-then-odd.py+, remove bogus +print+
+2. Commit.
+****
+
+[source, sh]
+----
+git commit -a -m "Fix dumb errors."
+----
+
+// //////////////////////////////////////////////////////////////
+== Demo
+
+****
+1. Push those changes to Gitlab.
+1. Pull those changes on +smblott+ and +fouly+
+****
+
+****
+Initially, we only have these bug fixes locally.
+
+Next, we want to publish them...
+****
+
+// //////////////////////////////////////////////////////////////
+== Demo
+
+****
+1. Push those changes to Gitlab.
+1. Pull those changes on +smblott+ and +fouly+
+****
+
+[source, sh]
+.On +chromebook+:
+----
+git push
+----
+
+[source, sh]
+.On remote systems:
+----
+git pull
+----
+
+// //////////////////////////////////////////////////////////////
+== Demo
+
+****
+1. Push those changes to Gitlab.
+1. Pull those changes on +smblott+ and +fouly+
+****
+
+.Observe
+****
+This is an atomic change to _two files_ (although it could be _many files_).
+
+It is not possible to have the change to one file but not the other.
+****
+
+// //////////////////////////////////////////////////////////////
+== Demo
+
+****
+Next, we will demo working with _different versions_ of the files.
+****
+
+// //////////////////////////////////////////////////////////////
+== Demo
+
+****
+1. Create a new branch +test+.
+2. Move the Python files to a subdirectory and add a note to +README.md+.
+****
+
+[source, sh]
+----
+git checkout -b 'test'
+
+mkdir ca116-scripts
+git mv *.py ca116-scripts
+
+# Edit README.md.
+
+git commit -a -m "Move Python scripts."
+----
+
+// //////////////////////////////////////////////////////////////
+== Demo
+
+****
+1. Create a new branch +test+.
+2. Move the Python files to a subdirectory and add a note to +README.md+.
+****
+
+****
+We now have _two versions_ of the project:
+
+- +master+ is the main branch
+- in +test+, the files have been moved (and +README.md+ edited)
+****
+
+// //////////////////////////////////////////////////////////////
+== Demo
+
+****
+1. Create a new branch +test+.
+2. Move the Python files to a subdirectory and add a note to +README.md+.
+****
+
+[source, sh]
+----
+git checkout 'master'
+ls -l
+
+git checkout 'test'
+ls -l
+----
+
+// //////////////////////////////////////////////////////////////
+== Demo
+
+****
+Publish our new branch.
+****
+
+// //////////////////////////////////////////////////////////////
+== Demo
+
+****
+1. Push new branch to Gitlab.
+2. Pull new branch on +smblott+.
+****
+
+// //////////////////////////////////////////////////////////////
+== Demo
+
+****
+1. Push new branch to Gitlab.
+2. Pull new branch on +smblott+.
+****
+
+[source, sh]
+.On +chromebook+:
+----
+git push -u origin 'test'
+----
+
+[source, sh]
+.Then on +smblott+:
+----
+git pull
+git checkout -t origin/test
+----
+// //////////////////////////////////////////////////////////////
+== Demo
+
+****
+1. Push new branch to Gitlab.
+2. Pull new branch on +smblott+.
+****
+
+.Observe
+****
+We now have copies of _both branches_ on the remote machine.
+****
+
+// //////////////////////////////////////////////////////////////
+== Demo
+
+****
+We decide we want to ("permanently") accept these changes.
+****
+
+// //////////////////////////////////////////////////////////////
+== Demo
+
+****
+1. Check out the +master+ branch.
+1. Merge the +test+ branch.
+****
+
+[source, sh]
+----
+git checkout 'master'
+git merge 'test'
+git push
+----
+
+// //////////////////////////////////////////////////////////////
+== Demo
+
+****
+Finally, let's add another file...
+****
+
+// //////////////////////////////////////////////////////////////
+== Demo
+
+****
+1. Add file (or make whatever other changes).
+1. Commit.
+1. Push.
+1. Then pull on remote systems.
+****
+
+[source, sh]
+----
+# Create a "hello.py" file, then...
+
+git add 'hello.py'
+git commit -a "Add Hello."
+git push
+----
+
+// //////////////////////////////////////////////////////////////
+== Aliases
+
+****
+Remembering those cryptic +git+ commands can be difficult.
+****
+
+****
+Unix shells provide a mechanism (_aliases_) for you to use short, memorable
+names for more complex commands.
+****
+
+****
+Less remembering, less typing, fewer typos.
+****
+
+// //////////////////////////////////////////////////////////////
+== Aliases
+
+[source, sh]
+----
+alias gc="git commit -a -m"
+
+alias gco="git checkout"             # Git Check Out
+
+alias gcoo="git checkout --track"    # Git Check Out Old
+alias gcon="git checkout -n"         # Git Check Out New
+----
+
+// //////////////////////////////////////////////////////////////
+== Aliases
+
+[source, sh]
+----
+alias gc="git commit -a -m"
+
+alias gco="git checkout"             # Git Check Out
+
+alias gcoo="git checkout --track"    # Git Check Out Old
+alias gcon="git checkout -n"         # Git Check Out New
+----
+
+[source, sh]
+.Then:
+----
+gc "Cool new feature."               # Git commit (with a suitable commit message)
+----
+
+// //////////////////////////////////////////////////////////////
+== Aliases and +.bashrc+
+
+****
+If a file +.bashrc+ exists in your home directory, then the +bash+ shell reads it in every new shell.
+
+(On the lab machines, you all have such a file in your home directory.)
+****
+
+****
+You can add these aliases to your +.bashrc+, and they will be automatically available in all new shells.
+****
+
+// //////////////////////////////////////////////////////////////
+== Getting Git
+
+****
+Git is installed:
+
+- on the Linux machines in the labs
+- on the Windows machines in the labs
+****
+
+// //////////////////////////////////////////////////////////////
+== Getting Git
+
+****
+For OS X (Macs):
+
+- google "_installing git on OS X_"
+  (the top link looks good)
+****
+
+****
+For Windows:
+
+- actually, the top link for the Google query above has information for Windows too
+- or google "_git for windows_"
+****
+
+// //////////////////////////////////////////////////////////////
+== Done
+
+****
+What should you do?
+****
+
+// //////////////////////////////////////////////////////////////
+== Done
+
+****
+What should you do?
+****
+
+****
+_Possibly nothing!_
+****
+
+// //////////////////////////////////////////////////////////////
+== Done
+
+****
+What should you do?
+****
+
+****
+Or, you might create a Gitlab repo for your CA116 scripts.
+****
+
+// //////////////////////////////////////////////////////////////
+== Done
+
+****
+What should you do?
+****
+
+****
+Or, you might create a Gitlab repo for _all of your DCU work_.
+****
+
+// //////////////////////////////////////////////////////////////
+== Done
+
+****
+What should you do?
+****
+
+****
+Why?
+
+Because git it makes it very easy to move your work back and forward
+between home and DCU.
+****
+
+// //////////////////////////////////////////////////////////////
+== Done
+
+****
+What should you do?
+****
+
+****
+However:
+
+Please do not waste time on this if it interferes with your studies.
+****
+
+// //////////////////////////////////////////////////////////////
+== Lastly
+
+****
+Here, I have glossed over one issue: _authentication_.
+****
+
+****
+If _you_ try any of this, you will find that you are asked for your user name and password frequently.
+****
+
+// //////////////////////////////////////////////////////////////
+== Lastly
+
+****
+It is possible to set up git such that it never asks for your user name and password
+****
+
+****
+Google "_gitlab ssh_" and read the top link.
+****
+
+// //////////////////////////////////////////////////////////////
+== Finally
+
+****
+If you try any of this (in L114) and get confused, then bang on my door.
+****
+
+.Warning
+****
+If you're on WiFi, then you must use +eduroam+, not the guest WiFi network.
+****
+
+include::../../misc/instrument.txt[]
+include::../../misc/asciimath.txt[]
+
+////
+//vim: ft=asciidoc
+//////
+//
