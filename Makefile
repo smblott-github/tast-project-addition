@@ -24,8 +24,6 @@ test:
 	# quick-and-dirty hack.
 	# Java
 	java Add 1 2 3 | grep -q -w 6
-	# Python 2
-	python add-python2.py 1 2 3 | grep -q -w 6
 	# Python 3
 	python3 add-python3.py 1 2 3 | grep -q -w 6
 	# C
