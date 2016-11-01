@@ -174,7 +174,7 @@ This is a demo of the most important basic features of git.
 
 ****
 1. Look at Gitlab.
-1. Clone the `tast-project-addition` repo.
+2. Clone the `test-project-addition` repo.
 ****
 
 // //////////////////////////////////////////////////////////////
@@ -182,12 +182,12 @@ This is a demo of the most important basic features of git.
 
 ****
 1. Look at Gitlab.
-1. Clone the `ca116-demo` repo.
+2. Clone the `test-project-addition` repo.
 ****
 
 [source, sh]
 ----
-git clone 'git@gitlab.computing.dcu.ie:sblott/ca116-demo.git'
+git clone git@github.com:smblott-github/test-project-addition.git
 ----
 
 // //////////////////////////////////////////////////////////////
@@ -195,7 +195,7 @@ git clone 'git@gitlab.computing.dcu.ie:sblott/ca116-demo.git'
 
 ****
 1. Look at Gitlab.
-1. Clone the `ca116-demo` repo.
+2. Clone the `test-project-addition` repo.
 ****
 
 ****
@@ -206,14 +206,59 @@ We now have a local copy of all of the repo's files.
 == Demo
 
 ****
+Tell git who we are.
+****
+
+[source, sh]
+----
+git config user.name "Stephen Blott"
+git config user.email "smblott+github@gmail.com"
+----
+
+// //////////////////////////////////////////////////////////////
+== Demo
+
+****
+Tell git our preferred text editor.
+
+Choose *one* of...
+****
+
+[source, sh]
+----
+git config --global core.editor "gedit -s"
+git config --global core.editor "subl -n -s"
+git config --global core.editor "sublime_text -n -s"
+git config --global core.editor "mate -w"
+git config --global core.editor "gvim -f"
+----
+
+// //////////////////////////////////////////////////////////////
+== Demo
+
+****
+Do *not* do this...
+****
+
+[source, sh]
+----
+git config --global core.editor "gedit -s"
+----
+
+// //////////////////////////////////////////////////////////////
+== Demo
+
+****
+We only have to do the previous steps once per repo.
+****
+
+// //////////////////////////////////////////////////////////////
+== Demo
+
+****
 1. Move existing Python files into the repo.
 1. Add them.
 1. Commit.
-****
-
-.Note to self
-****
-The files we need are in +~/python+ (on +chromebook+).
 ****
 
 // //////////////////////////////////////////////////////////////
