@@ -22,14 +22,6 @@ $ java Add 1 2 3
 6
 ```
 
-Python:
-```shell
-$ python add-python2.py 1 2 3
-```
-```
-6
-```
-
 C:
 ```shell
 $ ./add 1 2 3
