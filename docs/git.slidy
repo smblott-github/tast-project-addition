@@ -24,7 +24,7 @@ Most software is written by _many_ contributors.
 ****
 
 ****
-For example, Python interpreter has hundreds of contributors.
+For example, the Python interpreter has hundreds of contributors.
 ****
 
 // //////////////////////////////////////////////////////////////
@@ -55,15 +55,6 @@ we need a mechanism for copying those changes to other developers.
 // //////////////////////////////////////////////////////////////
 == Some Potential Problems
 
-.Merging change sets
-****
-When two developers make _different_ changes to the _same file_,
-we need a mechanism for _merging those changes_, automatically.
-****
-
-// //////////////////////////////////////////////////////////////
-== Some Potential Problems
-
 .Atomic change sets
 ****
 If a change set involves _several changes to different files_, then we should always see the state either _before_ all of the changes, or _after_ all of the changes.
@@ -73,6 +64,15 @@ If a change set involves _several changes to different files_, then we should al
 We should never see a set of files with the changes having been made in some files but not in others.
 
 That just won't work!
+****
+
+// //////////////////////////////////////////////////////////////
+== Some Potential Problems
+
+.Merging change sets
+****
+When two developers make _different_ changes to the _same file_,
+we need a mechanism for _merging those changes_, automatically.
 ****
 
 // //////////////////////////////////////////////////////////////
@@ -129,10 +129,10 @@ Git can be used to manage:
 ****
 
 ****
-All of the lecture material for this module live in git.
+All of my lecture material lives in git.
 
 That includes the Einstein markers, the slides, the lab sheets, the web
-site (and more).
+site (and more) -- if you know my modules.
 ****
 
 // //////////////////////////////////////////////////////////////
