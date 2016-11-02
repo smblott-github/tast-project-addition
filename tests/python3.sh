@@ -2,4 +2,5 @@
 
 set -e
 
-python3 add_python3.py 1 2 3 | grep -q -w 6
+
+java Add 1 2 3 | grep -q -w 6
