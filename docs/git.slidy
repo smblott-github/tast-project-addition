@@ -459,6 +459,85 @@ It is not possible to have the change applied in one file but not in another.
 == Demo
 
 ****
+Files which are automatically generated should not be tracked.
+****
+
+----
+add
+Java.class
+----
+
+// //////////////////////////////////////////////////////////////
+== Demo
+
+****
+Files which are automatically generated should not be tracked.
+****
+
+[source, sh]
+----
+git status
+----
+
+// //////////////////////////////////////////////////////////////
+== Demo
+
+****
+Files which are automatically generated should not be tracked.
+****
+
+----
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        Add.class
+        add
+----
+
+// //////////////////////////////////////////////////////////////
+== Demo
+
+****
+Files matching patterns in any file called +.gitignore+ are ignored by +git+.
+****
+
+// //////////////////////////////////////////////////////////////
+== Demo
+
+****
+Files matching patterns in any file called +.gitignore+ are ignored by +git+.
+****
+
+.+.gitignore+:
+----
+add
+*.class
+----
+
+// //////////////////////////////////////////////////////////////
+== Demo
+
+****
+Files matching patterns in any file called +.gitignore+ are ignored by +git+.
+****
+
+.+.gitignore+:
+----
+add
+*.class
+----
+
+[source, sh]
+----
+git add .gitignore
+git commit -a -m "Add .gitignore."
+git push
+----
+
+// //////////////////////////////////////////////////////////////
+== Demo
+
+****
 Next, we will demo working with _different versions_ of the files.
 ****
 
@@ -476,7 +555,7 @@ git checkout -b 'restructure-tests'
 
 # Make changes.
 
-git commit -a -m "Move Python scripts."
+git commit -a -m "Move tests scripts."
 git push -u origin master
 ----
 
@@ -484,23 +563,17 @@ git push -u origin master
 == Demo
 
 ****
-1. Create a new branch +test+.
-2. Move the Python files to a subdirectory and add a note to +README.md+.
-****
-
-****
 We now have _two versions_ of the project:
 
 - +master+ is the main branch
-- in +test+, the files have been moved (and +README.md+ edited)
+- +restructure-tests+, in which the tests have been moved to a sub-directory.
 ****
 
 // //////////////////////////////////////////////////////////////
 == Demo
 
 ****
-1. Create a new branch +test+.
-2. Move the Python files to a subdirectory and add a note to +README.md+.
+We can jump back and forward between each branch.
 ****
 
 [source, sh]
@@ -508,57 +581,9 @@ We now have _two versions_ of the project:
 git checkout 'master'
 ls -l
 
-git checkout 'test'
+git checkout 'restructure-tests'
 ls -l
 ----
-
-// //////////////////////////////////////////////////////////////
-== Demo
-
-****
-Publish our new branch.
-****
-
-// //////////////////////////////////////////////////////////////
-== Demo
-
-****
-1. Push new branch to Gitlab.
-2. Pull new branch on +smblott+.
-****
-
-// //////////////////////////////////////////////////////////////
-== Demo
-
-****
-1. Push new branch to Gitlab.
-2. Pull new branch on +smblott+.
-****
-
-[source, sh]
-.On +chromebook+:
-----
-git push -u origin 'test'
-----
-
-[source, sh]
-.Then on +smblott+:
-----
-git pull
-git checkout -t origin/test
-----
-// //////////////////////////////////////////////////////////////
-== Demo
-
-****
-1. Push new branch to Gitlab.
-2. Pull new branch on +smblott+.
-****
-
-.Observe
-****
-We now have copies of _both branches_ on the remote machine.
-****
 
 // //////////////////////////////////////////////////////////////
 == Demo
@@ -571,14 +596,17 @@ We decide we want to ("permanently") accept these changes.
 == Demo
 
 ****
-1. Check out the +master+ branch.
-1. Merge the +test+ branch.
+We decide we want to ("permanently") accept these changes.
+****
+
+****
+We could do this locally...
 ****
 
 [source, sh]
 ----
-git checkout 'master'
-git merge 'test'
+git checkout master
+git merge restructure-tests
 git push
 ----
 
@@ -586,27 +614,18 @@ git push
 == Demo
 
 ****
-Finally, let's add another file...
+We decide we want to ("permanently") accept these changes.
 ****
 
-// //////////////////////////////////////////////////////////////
-== Demo
-
 ****
-1. Add file (or make whatever other changes).
-1. Commit.
-1. Push.
-1. Then pull on remote systems.
+We could do this locally.
+
+But on open-source projects, we may not be the owner of the project.
 ****
 
-[source, sh]
-----
-# Create a "hello.py" file, then...
-
-git add 'hello.py'
-git commit -a "Add Hello."
-git push
-----
+****
+In this case, we submit a _pull request_ (PR) on Github.
+****
 
 // //////////////////////////////////////////////////////////////
 == Aliases
