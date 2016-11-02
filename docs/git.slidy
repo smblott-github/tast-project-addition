@@ -732,6 +732,18 @@ In the School of Computing, git is installed:
 == Getting Git
 
 ****
+For Linux, probably something like
+
+[source, sh]
+----
+sudo apt-get install git
+----
+****
+
+// //////////////////////////////////////////////////////////////
+== Getting Git
+
+****
 For OS X (Macs):
 
 - google "_installing git on OS X_"
