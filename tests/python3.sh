@@ -2,4 +2,4 @@
 
 set -e
 
-python add_python2.py 1 2 3 | grep -q -w 6
+python3 add_python3.py 1 2 3 | grep -q -w 6
