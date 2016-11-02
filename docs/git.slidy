@@ -443,7 +443,7 @@ git pull                   # Pull any remote updates.
 
 # Make changes (edit files, create new files).
 
-git add FILENAME           # For any new files:
+git add FILENAME           # For any new files.
 
 git commit -a -m "Message" # Commit.
 
