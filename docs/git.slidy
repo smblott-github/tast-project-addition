@@ -4,6 +4,31 @@ Stephen Blott <stephen.blott@dcu.ie>
 :stylesheet: /home/blott/.asciidoc/themes/smblott/smblott-extra.css
 
 // //////////////////////////////////////////////////////////////
+== Information and Links
+
+.Information
+****
+- Boot into the Linux desktop.
+- Username: +socguest+
+- Password: +computing+
+****
+
+.Links
+****
+- These slides: http://smblott.org/git.html[].
+- Test project: https://github.com/smblott-github/test-project-addition[].
+- Cheat sheet: https://github.com/smblott-github/test-project-addition/blob/master/docs/cheat-sheet.md[].
+****
+
+// //////////////////////////////////////////////////////////////
+== Plan
+
+****
+- Me talky, talky for circa 45 minutes (incl. demo).
+- Then we try git for ourselves.
+****
+
+// //////////////////////////////////////////////////////////////
 == Software Projects
 
 ****
@@ -63,7 +88,7 @@ If a change set involves _several changes to different files_, then we should al
 ****
 We should never see a set of files with the changes having been made in some files but not in others.
 
-That just won't work!
+That just wouldn't work!
 ****
 
 // //////////////////////////////////////////////////////////////
@@ -72,7 +97,7 @@ That just won't work!
 .Merging change sets
 ****
 When two developers make _different_ changes to the _same file_,
-we need a mechanism for _merging those changes_, automatically.
+we need a mechanism for _merging those changes_, ideally automatically.
 ****
 
 // //////////////////////////////////////////////////////////////
@@ -113,7 +138,7 @@ Git can be used to manage:
 - private/proprietary/commercial software projects
 - open-source software projects
 - or just your own files +
-  (for example, the scripts your write in this module)
+  (for example, your own Linux configuration files and scripts)
 ****
 
 // //////////////////////////////////////////////////////////////
@@ -131,7 +156,7 @@ Git can be used to manage:
 ****
 All of my lecture material lives in git.
 
-That includes the Einstein markers, the slides, the lab sheets, the web
+That includes my Einstein markers, my slides, the lab sheets, the web
 site (and more) -- if you know my modules.
 ****
 
@@ -144,11 +169,10 @@ and https://bitbucket.org/[Bitbucket] which provide free hosting of Git reposito
 ****
 
 ****
-Here at DCU, we host a https://gitlab.computing.dcu.ie/[Gitlab] instance.
+For School of Computing students, we host a https://gitlab.computing.dcu.ie/[Gitlab] instance.
 
-All students at the School of Computing already have an account on Gitlab.
-
-(Just use the credentials which you use in the labs.)
+(All students at the School of Computing already have an account on Gitlab.
+Just use the credentials which you use in the labs.)
 ****
 
 // //////////////////////////////////////////////////////////////
@@ -164,16 +188,16 @@ In git terminology, the collection of files (and all versions of that collection
 == Demo
 
 ****
-This is not a tutorial on git (that would take too long).
+This is not a full tutorial on git (that would take too long).
 
-This is a demo of the most important basic features of git.
+This is a demo of the most-important, basic features of git.
 ****
 
 // //////////////////////////////////////////////////////////////
 == Demo
 
 ****
-1. Look at Gitlab.
+1. Look at https://github.com/smblott-github/test-project-addition[Github].
 2. Clone the `test-project-addition` repo.
 ****
 
@@ -181,7 +205,7 @@ This is a demo of the most important basic features of git.
 == Demo
 
 ****
-1. Look at Gitlab.
+1. Look at https://github.com/smblott-github/test-project-addition[Github].
 2. Clone the `test-project-addition` repo.
 ****
 
@@ -194,7 +218,7 @@ git clone git@github.com:smblott-github/test-project-addition.git
 == Demo
 
 ****
-1. Look at Gitlab.
+1. Look at https://github.com/smblott-github/test-project-addition[Github].
 2. Clone the `test-project-addition` repo.
 ****
 
@@ -211,26 +235,29 @@ Tell git who we are.
 
 [source, sh]
 ----
-git config user.name "Stephen Blott"
-git config user.email "smblott+github@gmail.com"
+cd test-project-addition
+
+git config user.name "YOUR NAME REAL NAME"
+git config user.email YOUR_EMAIL_ADDRESS
 ----
 
 // //////////////////////////////////////////////////////////////
 == Demo
 
 ****
-Tell git our preferred text editor.
+Tell git your preferred text editor.
 
 Choose *one* of...
 ****
 
 [source, sh]
 ----
-git config --global core.editor "gedit -s"
-git config --global core.editor "subl -n -s"
-git config --global core.editor "sublime_text -n -s"
-git config --global core.editor "mate -w"
-git config --global core.editor "gvim -f"
+git config core.editor "gedit -s"
+git config core.editor "subl -n -s"
+git config core.editor "sublime_text -n -s"
+git config core.editor "mate -w"
+git config core.editor "gvim -f"
+git config core.editor "vim"
 ----
 
 // //////////////////////////////////////////////////////////////
@@ -242,8 +269,12 @@ Do *not* do this...
 
 [source, sh]
 ----
-git config --global core.editor "gedit -s"
+git config --global core.editor gedit
 ----
+
+****
+The editor you use must *block* the calling process until it exits.
+****
 
 // //////////////////////////////////////////////////////////////
 == Demo
@@ -256,45 +287,105 @@ We only have to do the previous steps once per repo.
 == Demo
 
 ****
-1. Move existing Python files into the repo.
-1. Add them.
-1. Commit.
+1. Clone repo on +smblott+ (in office).
+1. Clone repo on +fouly+ (at home).
 ****
 
 // //////////////////////////////////////////////////////////////
 == Demo
 
 ****
-1. Move existing Python files into the repo.
-1. Add them.
-1. Commit.
+Now, what does this project do?
+
+Not a lot:
+
+- it implements programs to add up the command-line arguments in various programming languages
+****
+
+[source, sh]
+.Try:
+----
+make
+
+make test
+----
+
+// //////////////////////////////////////////////////////////////
+== Demo
+
+****
+1. Create a Python 2 implementation.
+2. Tell git that we want it to track our new file.
+3. Add a test.
+4. Commit.
+****
+
+// //////////////////////////////////////////////////////////////
+== Demo
+
+****
+Create a Python 2 implementation.
+****
+
+[source, python]
+.add-python2.py:
+----
+import sys
+
+total = 0
+for s in sys.argv[1:]:
+   total += int(s)
+
+print total
+----
+
+// //////////////////////////////////////////////////////////////
+== Demo
+
+****
+Tell git that we want it to track our new file.
 ****
 
 [source, sh]
 ----
-cp ~/python/*.py .
-
-git add *.py
-
-git commit -a -m "Add existing Python scripts."
+git add add-python2.py
 ----
 
 // //////////////////////////////////////////////////////////////
 == Demo
 
 ****
-1. Push changes.
-****
-
-****
-This step copies the new files (technically, the _change set_) to Gitlab.
+Add a test.
 ****
 
 // //////////////////////////////////////////////////////////////
 == Demo
 
 ****
-1. Push changes.
+Commit.
+****
+
+[source, sh]
+----
+git commit -a -m "Add new Python 2 implementation."
+----
+
+// //////////////////////////////////////////////////////////////
+== Demo
+
+****
+Push changes.
+****
+
+****
+This step copies the new file (technically, the _change set_) to Github.
+****
+
+// //////////////////////////////////////////////////////////////
+== Demo
+
+****
+Push changes.
 ****
 
 [source, sh]
@@ -313,74 +404,11 @@ git push -u origin master
 == Demo
 
 ****
-1. Clone repo on +smblott+ (in office).
-1. Clone repo on +fouly+ (at home).
-****
-
-.Observe
-****
-The new files have been copied to those locations too.
-****
-
-****
-The clone command is the same as before.
-****
-
-// //////////////////////////////////////////////////////////////
-== Demo
-
-****
-1. Fix errors:
-** in +./histogram.py+, remove +int()+
-** in +./even-then-odd.py+, remove bogus +print+
-2. Commit.
-****
-
-// //////////////////////////////////////////////////////////////
-== Demo
-
-****
-1. Fix errors:
-** in +./histogram.py+, remove +int()+
-** in +./even-then-odd.py+, remove bogus +print+
-2. Commit.
+1. Pull repo on +smblott+ (in office).
+1. Pull repo on +fouly+ (at home).
 ****
 
 [source, sh]
-----
-git commit -a -m "Fix dumb errors."
-----
-
-// //////////////////////////////////////////////////////////////
-== Demo
-
-****
-1. Push those changes to Gitlab.
-1. Pull those changes on +smblott+ and +fouly+
-****
-
-****
-Initially, we only have these bug fixes locally.
-
-Next, we want to publish them...
-****
-
-// //////////////////////////////////////////////////////////////
-== Demo
-
-****
-1. Push those changes to Gitlab.
-1. Pull those changes on +smblott+ and +fouly+
-****
-
-[source, sh]
-.On +chromebook+:
-----
-git push
-----
-
-[source, sh]
-.On remote systems:
 ----
 git pull
 ----
@@ -389,15 +417,42 @@ git pull
 == Demo
 
 ****
-1. Push those changes to Gitlab.
-1. Pull those changes on +smblott+ and +fouly+
+1. Pull repo on +smblott+ (in office).
+1. Pull repo on +fouly+ (at home).
 ****
 
 .Observe
 ****
-This is an atomic change to _two files_ (although it could be _many files_).
+The new files have been copied to those locations too.
+****
 
-It is not possible to have the change to one file but not the other.
+// //////////////////////////////////////////////////////////////
+== Demo
+
+
+[source, sh]
+.Workflow:
+----
+git pull                   # Pull any remote updates.
+
+# Make changes (edit files, create new files).
+
+git add FILENAME           # For any new files:
+
+git commit -a -m "Message" # Commit.
+
+git push                   # Push changes.
+----
+
+// //////////////////////////////////////////////////////////////
+== Demo
+
+****
+Commits bundle up the changes to one *or more* files into a single change set.
+
+The changes are atomic.
+
+It is not possible to have the change applied in one file but not in another.
 ****
 
 // //////////////////////////////////////////////////////////////
@@ -411,20 +466,18 @@ Next, we will demo working with _different versions_ of the files.
 == Demo
 
 ****
-1. Create a new branch +test+.
-2. Move the Python files to a subdirectory and add a note to +README.md+.
+1. Create a new branch +restructure-tests+.
+2. Move the tests to a separate script and directory.
 ****
 
 [source, sh]
 ----
-git checkout -b 'test'
+git checkout -b 'restructure-tests'
 
-mkdir ca116-scripts
-git mv *.py ca116-scripts
-
-# Edit README.md.
+# Make changes.
 
 git commit -a -m "Move Python scripts."
+git push -u origin master
 ----
 
 // //////////////////////////////////////////////////////////////
