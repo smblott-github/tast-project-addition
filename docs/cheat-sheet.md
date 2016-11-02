@@ -57,6 +57,13 @@ git commit -a
 git push
 ```
 
+Or:
+
+```shell
+# Commit your changes.
+git commit -a -m "Your commit message goes here."
+```
+
 If you add a new file and you want git to track it, then:
 ```shell
 git add NEW_FILE
@@ -82,6 +89,11 @@ If you create a **new** `.gitignore` file, then you will have to tell git to tra
 git add .gitignore
 git commit -a
 git push
+```
+
+If you want to *remove* a file, then:
+```shell
+git rm OLD_FILE
 ```
 
 ### Checking the status
