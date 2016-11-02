@@ -13,22 +13,9 @@ build: $(targets)
 	gcc -o $@ $<
 
 test:
-	# Output the test context (for reference only).
-	pwd
-	ls -l
 	# Build C and Java targets.
 	$(MAKE) build
-	# NOTE(sblott)  This is not a recommended test framework.  It's just a
-	# quick-and-dirty hack.
-	# Java
-	java Add 1 2 3 | grep -q -w 6
-	# Python 3
-	python3 add-python3.py 1 2 3 | grep -q -w 6
-	# C
-	./add 1 2 3 | grep -q -w 6
-	# Perl
-	perl add.pl 1 2 3 | grep -q -w 6
-	perl add.pl 1 2 3 | wc -l | grep -q -w 1
+	for script in tests/*.sh; do sh $$script || exit 1; done
 
 clean:
 	rm -fv $(targets)
