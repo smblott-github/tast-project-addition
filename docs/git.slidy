@@ -634,6 +634,20 @@ See https://github.com/smblott-github/test-project-addition[here, again].
 ****
 
 // //////////////////////////////////////////////////////////////
+== Workflow
+
+****
+Normally, you _do not work on the_ +master+ _branch_:
+
+- +git pull+ -- to get the most recent version of the code
+- create a feature branch
+- work on the feature in that branch
+- when it's ready, either:
+** merge that branch into +master+, or
+** submit a PR
+****
+
+// //////////////////////////////////////////////////////////////
 == Lastly
 
 ****
@@ -740,6 +754,8 @@ For Windows:
   programming language of your choice.
 - Submit a PR on Github, and I'll merge the first reasonable PR for each
   programming language.
+
+https://github.com/smblott-github/test-project-addition/blob/master/docs/cheat-sheet.md#cheat-sheet[Cheat sheet].
 ****
 
 ****
