@@ -243,6 +243,8 @@ cd test-project-addition
 
 git config user.name "YOUR NAME REAL NAME"
 git config user.email YOUR_EMAIL_ADDRESS
+
+git config credential.helper cache
 ----
 
 // //////////////////////////////////////////////////////////////
