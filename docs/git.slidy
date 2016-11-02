@@ -20,6 +20,10 @@ Stephen Blott <stephen.blott@dcu.ie>
 - Cheat sheet: https://github.com/smblott-github/test-project-addition/blob/master/docs/cheat-sheet.md[].
 ****
 
+****
+*You will need a Github account.*
+****
+
 // //////////////////////////////////////////////////////////////
 == Plan
 
@@ -556,7 +560,7 @@ git checkout -b 'restructure-tests'
 # Make changes.
 
 git commit -a -m "Move tests scripts."
-git push -u origin master
+git push -u origin restructure-tests
 ----
 
 // //////////////////////////////////////////////////////////////
@@ -625,6 +629,17 @@ But on open-source projects, we may not be the owner of the project.
 
 ****
 In this case, we submit a _pull request_ (PR) on Github.
+
+See https://github.com/smblott-github/test-project-addition[here, again].
+****
+
+// //////////////////////////////////////////////////////////////
+== Lastly
+
+****
+I will remove the Python 2 implementation.
+
+(You can re-write it yourself.)
 ****
 
 // //////////////////////////////////////////////////////////////
@@ -648,7 +663,7 @@ Less remembering, less typing, fewer typos.
 
 [source, sh]
 ----
-alias gc="git commit -a -m"
+alias gc="git commit -a -m"          # Git Commit
 
 alias gco="git checkout"             # Git Check Out
 
@@ -661,7 +676,7 @@ alias gcon="git checkout -n"         # Git Check Out New
 
 [source, sh]
 ----
-alias gc="git commit -a -m"
+alias gc="git commit -a -m"          # Git Commit
 
 alias gco="git checkout"             # Git Check Out
 
@@ -680,19 +695,18 @@ gc "Cool new feature."               # Git commit (with a suitable commit messag
 
 ****
 If a file +.bashrc+ exists in your home directory, then the +bash+ shell reads it in every new shell.
-
-(On the lab machines, you all have such a file in your home directory.)
 ****
 
 ****
-You can add these aliases to your +.bashrc+, and they will be automatically available in all new shells.
+You can add these aliases to your +.bashrc+, and they will be automatically
+available in all new shells.
 ****
 
 // //////////////////////////////////////////////////////////////
 == Getting Git
 
 ****
-Git is installed:
+In the School of Computing, git is installed:
 
 - on the Linux machines in the labs
 - on the Windows machines in the labs
@@ -716,108 +730,18 @@ For Windows:
 ****
 
 // //////////////////////////////////////////////////////////////
-== Done
+== Practical Work
 
 ****
-What should you do?
+- Go to https://github.com/smblott-github/test-project-addition[Github].
+- _Fork_ the repo.
+- Clone _your copy of the repo_.
+- Add a new program to add together its command-line arguments in any
+  programming language of your choice.
+- Submit a PR on Github, and I'll merge the first reasonable PR for each
+  programming language.
+- We'll talk about the PR workflow when we get an interesting PR.
 ****
-
-// //////////////////////////////////////////////////////////////
-== Done
-
-****
-What should you do?
-****
-
-****
-_Possibly nothing!_
-****
-
-// //////////////////////////////////////////////////////////////
-== Done
-
-****
-What should you do?
-****
-
-****
-Or, you might create a Gitlab repo for your CA116 scripts.
-****
-
-// //////////////////////////////////////////////////////////////
-== Done
-
-****
-What should you do?
-****
-
-****
-Or, you might create a Gitlab repo for _all of your DCU work_.
-****
-
-// //////////////////////////////////////////////////////////////
-== Done
-
-****
-What should you do?
-****
-
-****
-Why?
-
-Because git it makes it very easy to move your work back and forward
-between home and DCU.
-****
-
-// //////////////////////////////////////////////////////////////
-== Done
-
-****
-What should you do?
-****
-
-****
-However:
-
-Please do not waste time on this if it interferes with your studies.
-****
-
-// //////////////////////////////////////////////////////////////
-== Lastly
-
-****
-Here, I have glossed over one issue: _authentication_.
-****
-
-****
-If _you_ try any of this, you will find that you are asked for your user name and password frequently.
-****
-
-// //////////////////////////////////////////////////////////////
-== Lastly
-
-****
-It is possible to set up git such that it never asks for your user name and password
-****
-
-****
-Google "_gitlab ssh_" and read the top link.
-****
-
-// //////////////////////////////////////////////////////////////
-== Finally
-
-****
-If you try any of this (in L114) and get confused, then bang on my door.
-****
-
-.Warning
-****
-If you're on WiFi, then you must use +eduroam+, not the guest WiFi network.
-****
-
-include::../../misc/instrument.txt[]
-include::../../misc/asciimath.txt[]
 
 ////
 //vim: ft=asciidoc
