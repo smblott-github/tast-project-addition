@@ -1,12 +1,12 @@
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 
-int main(int argc, char *argv[])
-{
-   int i, total = 0;
-   for (i = 1; i < argc; i += 1)
-      total += atoi(argv[i]);
+int main(int argc, char *argv[]) {
+   int i = 1;
+   int total = 0;
+   while (i < argc) {
+      total = total + atoi(argv[i]);
+      i = i + 1;
+   }
    printf("%d\n", total);
-
-   return 0;
 }

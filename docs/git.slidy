@@ -243,6 +243,8 @@ cd test-project-addition
 
 git config user.name "YOUR NAME REAL NAME"
 git config user.email YOUR_EMAIL_ADDRESS
+
+git config credential.helper cache
 ----
 
 // //////////////////////////////////////////////////////////////
@@ -441,7 +443,7 @@ git pull                   # Pull any remote updates.
 
 # Make changes (edit files, create new files).
 
-git add FILENAME           # For any new files:
+git add FILENAME           # For any new files.
 
 git commit -a -m "Message" # Commit.
 
@@ -724,6 +726,18 @@ In the School of Computing, git is installed:
 
 - on the Linux machines in the labs
 - on the Windows machines in the labs
+****
+
+// //////////////////////////////////////////////////////////////
+== Getting Git
+
+****
+For Linux, probably something like
+
+[source, sh]
+----
+sudo apt-get install git
+----
 ****
 
 // //////////////////////////////////////////////////////////////
