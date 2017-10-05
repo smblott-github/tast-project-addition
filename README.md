@@ -5,6 +5,13 @@ arguments in various programming languages.
 
 It is intended for the demonstration of git.
 
+The git URLs for the upstream repo are:
+
+```
+https://gitlab.computing.dcu.ie/sblott/test-project-addition.git (for HTTPS)
+git@gitlab.computing.dcu.ie:sblott/test-project-addition.git (for SSH)
+```
+
 ### Build
 
 Use:
@@ -29,6 +36,8 @@ $ ./add 1 2 3
 ```
 6
 ```
+
+And similarly for other languages.
 
 ### Tests
 
