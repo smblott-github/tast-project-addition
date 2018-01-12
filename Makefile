@@ -10,7 +10,8 @@ build: $(targets)
 	javac $<
 
 %: %.c
-	gcc -o $@ $<
+	mkdir -p build
+	gcc -o build/$@ $<
 
 test:
 	# Build C and Java targets.
